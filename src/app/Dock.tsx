@@ -1,8 +1,21 @@
 import { Dock as DockComponent, DockIcon } from "@/components/ui/dock";
+import { ShineBorder } from "@/components/ui/shine-border";
 
 export default function Dock() {
   return (
     <DockComponent className="bg-[#f0f0f0]">
+      <ShineBorder
+        duration={8}
+        shineColor={[
+          "#ff0080aa",
+          "#7928caaa",
+          "#0070f3aa",
+          "#38bdf8aa",
+          "#ff0080aa",
+        ]}
+        borderWidth={1}
+      />
+
       <DockIcon>
         <a
           href="https://github.com/iilou"

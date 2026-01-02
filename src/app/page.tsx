@@ -20,6 +20,7 @@ import { ExternalLink } from "lucide-react";
 import { ShineBorder } from "@/components/ui/shine-border";
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import SkillOrbital from "./SkillOrbital";
+import Background from "./background";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -208,9 +209,28 @@ export default function Home() {
     <div
       className={` min-h-screen flex flex-col items-center ${roboto.variable} font-sans w-full gap-4 overflow-hidden`}
     >
-      <div className="fixed top-0 left-0 w-full h-screen z-0 overflow-hidden">
-        <RetroGrid opacity={0.8} />
+      <div className="fixed top-[22%] left-0 w-full h-[40%] z-1 bg-[radial-gradient(circle,rgba(200,200,200,0.3)_0%,rgba(200,200,200,0.5)_14%,rgba(200,200,200,0.7)_16%,rgba(200,200,200,0.7)_17%,rgba(200,200,200,0)_17.5%,rgba(230,230,230,0)_100%)]"></div>
+      <div className="fixed top-[10%] left-0 w-full h-full z-10 overflow-hidden bg-[linear-gradient(to_bottom,transparent_0%,transparent_26%,white_26.5%,transparent_27%,transparent_28%,white_28.5%,transparent_29%,transparent_30%,#fafafa_33%,#fafafa_44%,transparent_60%,transparent_100%)]"></div>
+      <img
+        src="palm.svg"
+        alt="background palm trees"
+        className="fixed top-[2%] left-[6%] z-2 w-[30%] h-auto"
+      />
+      <img
+        src="palm.svg"
+        alt="background palm trees"
+        className="fixed top-[2%] right-[6%] z-2 w-[30%] h-auto scale-x-[-1]"
+      />
+      <div className="fixed top-[-20%] left-0 w-full h-[140%] z-0 overflow-hidden flex items-center justify-center">
+        <RetroGrid
+          opacity={1}
+          angle={75}
+          cellSize={20}
+          lightLineColor="#919191"
+          darkLineColor="#919191"
+        />
       </div>
+      {/* <Background /> */}
       <div className="bg-[#ffffff] w-full h-12 relative z-10"></div>
       <div className="w-full px-8 flex flex-col items-center bg-transparent gap-4 relative z-10 mb-52">
         <Section>
