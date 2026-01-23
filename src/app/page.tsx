@@ -146,7 +146,7 @@ const projects: {
         formality: "complete/live",
     },
     {
-        title: "Tetr.AI - Personal Project",
+        title: "Tetr.AI",
         description:
             "Tetr.AI is a Tetris AI  using a Genetic Learning Algorithm Model that learns how to play competitive Tetris using vanilla C++ to design the AI Model and the evaluation function and the SDL2 C library for the UI.\nThis model uses a heuristic approach to judge the most optimal destination of a tetris piece given a list of the bot’s future tetris pieces and a specific board state, and is able to process up to four unique upcoming pieces at once",
         github: "https://github.com/iilou/tetr.ai",
@@ -169,7 +169,7 @@ const projects: {
         title: "DSA visualizer",
         description: "A website that visualizes various data structures and algorithms.",
         image: "dsa_vis.png",
-        link: "https://github.com/iilou/dsa_vis",
+        link: "https://iilou.github.io/dsa_vis",
         tags: ["React", "JavaScript", "CSS", "Data Structures & Algorithms"],
         github: "https://github.com/iilou/dsa_vis",
         formality: "low-scope",
@@ -223,11 +223,15 @@ export default function Home() {
         >
             <div className="fixed top-[22%] left-0 w-full h-[40%] z-1 bg-[radial-gradient(circle,rgba(200,200,200,0.3)_0%,rgba(200,200,200,0.5)_14%,rgba(200,200,200,0.7)_16%,rgba(200,200,200,0.7)_17%,rgba(200,200,200,0)_17.5%,rgba(230,230,230,0)_100%)]"></div>
             <div className="fixed top-[10%] left-0 w-full h-full z-10 overflow-hidden bg-[linear-gradient(to_bottom,transparent_0%,transparent_26%,white_26.5%,transparent_27%,transparent_28%,white_28.5%,transparent_29%,transparent_30%,#fafafa_33%,#fafafa_44%,transparent_60%,transparent_100%)]"></div>
-            <img src="palm.svg" alt="background palm trees" className="fixed top-[2%] left-[6%] z-2 w-[30%] h-auto" />
             <img
                 src="palm.svg"
                 alt="background palm trees"
-                className="fixed top-[2%] right-[6%] z-2 w-[30%] h-auto scale-x-[-1]"
+                className="fixed bottom-[46%] lg:bottom-[35%] left-[6%] z-2 w-[30%]"
+            />
+            <img
+                src="palm.svg"
+                alt="background palm trees"
+                className="fixed bottom-[46%] lg:bottom-[35%] right-[6%] z-2 w-[30%] h-auto scale-x-[-1]"
             />
             <div className="fixed top-[-20%] left-0 w-full h-[140%] z-0 overflow-hidden flex items-center justify-center">
                 <RetroGrid opacity={1} angle={75} cellSize={20} lightLineColor="#919191" darkLineColor="#919191" />
@@ -317,14 +321,24 @@ export default function Home() {
                     </SectionHeader>
                     <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {projects.map((project, index) => (
-                            <MagicCard
-                                key={index}
-                                className=" rounded-lg px-6 py-6 flex flex-col h-fit"
-                                gradientSize={400}
-                                gradientColor="#d9d9d955"
+                            // <MagicCard
+                            //     key={index}
+                            //     className=" rounded-lg px-6 py-6 flex flex-col h-fit"
+                            //     gradientSize={400}
+                            //     gradientColor="#d9d9d955"
+                            // >
+                            <div
+                                key={index + "d"}
+                                className=" rounded-lg px-6 py-6 flex flex-col h-fit bg-[#fafafacf] relative"
                             >
-                                <h3 className="text-2xl font-semibold text-[#2e2e2e] flex gap-2 items-center">
-                                    <div
+                                <ShineBorder
+                                    key={index}
+                                    duration={16}
+                                    shineColor={["#ff0080aa", "#7928caaa", "#0070f3aa", "#38bdf8aa", "#ff0080aa"]}
+                                    borderWidth={1}
+                                />
+                                <h3 className="text-xl font-bold text-[#2e2e2e] flex gap-2 items-center">
+                                    {/* <div
                                         className="w-4 h-4 rounded-full shrink-0"
                                         style={{
                                             backgroundColor:
@@ -336,7 +350,7 @@ export default function Home() {
                                                         ? "#60A5FA"
                                                         : "#F87171",
                                         }}
-                                    ></div>
+                                    ></div> */}
                                     <a href={project.link} target="_blank" rel="noopener noreferrer">
                                         <span className="hover:underline ">{project.title}</span>
                                     </a>
@@ -378,7 +392,7 @@ export default function Home() {
                                         <TagSmall key={ti}>{tag}</TagSmall>
                                     ))}
                                 </div>
-                            </MagicCard>
+                            </div>
                         ))}
                     </div>
                 </Section>
